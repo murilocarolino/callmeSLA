@@ -31,7 +31,7 @@ const AjudaScreen = ({ onLoad }) => {
             <div className={styles.tela} hidden={conteudo}>
                 <h2 hidden={conteudo} >O que você procura?</h2>
                 <button hidden={conteudo} className={styles.addArtigo} > + </button>
-                <input hidden={conteudo} type="text" placeholder="Não achou o que estava procurando?" name="" id="" />
+                <input hidden={conteudo} type="text" placeholder="Não achou o que estava procurando?" className={styles.pesquisar} />
                 {listaAutoajuda.length > 0 ? (
                     <ul hidden={conteudo} style={{
                         display: foco ? 'flex' : 'none',
@@ -68,8 +68,12 @@ const AjudaScreen = ({ onLoad }) => {
             </div>
             <div className={styles.conteudo} hidden={foco}>
                 <h2 hidden={foco} >O que você procura?</h2>
-                <button hidden={foco} className={styles.addArtigo} > + </button>
-                <input hidden={foco} type="text" placeholder="Não achou o que estava procurando?" name="" id="" />
+                <div className={styles.containerBotoes} hidden={foco}>
+                    <input hidden={foco} type="text" placeholder="Não achou o que estava procurando?" name="" id="" />
+                    <button hidden={foco} className={styles.editar}> <h5>Excluir</h5> </button>
+                    <button hidden={foco} className={styles.excluir}> <h5> Editar </h5> </button>
+                </div>
+
                 <div className={styles.foco} hidden={foco}>
                     <div className={styles.detalhesContainer} hidden={foco}>
                         {info.imagem && (
